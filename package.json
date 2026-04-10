@@ -1,0 +1,12 @@
+{
+  "name": "todo-life-dashboard",
+  "version": "1.0.0",
+  "description": "To-Do Life Dashboard — static web app",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "fast-check": "^3.19.0",
+    "vitest": "^1.6.0"
+  }
+}

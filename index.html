@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Storage unavailable warning (hidden by default) -->
+  <div id="storage-warning" class="storage-warning hidden" role="alert">
+    ⚠️ Local Storage tidak tersedia. Data tidak akan disimpan secara permanen.
+  </div>
+
+  <div class="dashboard">
+
+    <!-- Greeting Widget -->
+    <section id="greeting-widget" class="widget widget--greeting" aria-label="Sapaan dan waktu">
+      <div id="greeting-time" class="greeting__time">00:00</div>
+      <div id="greeting-date" class="greeting__date">Senin, 1 Januari 2025</div>
+      <div id="greeting-text" class="greeting__text">Selamat Datang</div>
+      <div class="greeting__name-form">
+        <input
+          type="text"
+          id="greeting-name-input"
+          class="greeting__name-input"
+          placeholder="Masukkan nama Anda..."
+          aria-label="Nama pengguna"
+        />
+        <button id="greeting-name-save" class="btn btn--small">Simpan</button>
+      </div>
+    </section>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle tema">
+      <span class="theme-toggle__icon">🌙</span>
+    </button>
+
+    <!-- Focus Timer Widget -->
+    <section id="focus-timer" class="widget widget--timer" aria-label="Focus Timer">
+      <h2 class="widget__title">Focus Timer</h2>
+      <div id="timer-display" class="timer__display">25:00</div>
+      <div id="timer-completion" class="timer__completion hidden">✅ Sesi selesai!</div>
+      <div class="timer__controls">
+        <button id="timer-start" class="btn btn--primary">Mulai</button>
+        <button id="timer-stop" class="btn">Berhenti</button>
+        <button id="timer-reset" class="btn">Reset</button>
+      </div>
+      <div class="timer__settings">
+        <label for="timer-duration-input" class="timer__label">Durasi (menit):</label>
+        <input
+          type="number"
+          id="timer-duration-input"
+          class="timer__duration-input"
+          min="1"
+          max="120"
+          value="25"
+          aria-label="Durasi Pomodoro dalam menit"
+        />
+        <button id="timer-duration-save" class="btn btn--small">Simpan</button>
+        <div id="timer-duration-error" class="error-msg hidden"></div>
+      </div>
+    </section>
+
+    <!-- To-Do List Widget -->
+    <section id="todo-list" class="widget widget--todo" aria-label="Daftar Tugas">
+      <h2 class="widget__title">
+        Tugas
+        <span id="todo-count" class="todo__count">0 belum selesai</span>
+      </h2>
+      <div class="todo__input-row">
+        <input
+          type="text"
+          id="todo-input"
+          class="todo__input"
+          placeholder="Tambah tugas baru..."
+          aria-label="Teks tugas baru"
+        />
+        <button id="todo-add" class="btn btn--primary">Tambah</button>
+      </div>
+      <div id="todo-input-error" class="error-msg hidden"></div>
+      <ul id="todo-items" class="todo__list" aria-label="Daftar tugas"></ul>
+    </section>
+
+    <!-- Quick Links Widget -->
+    <section id="quick-links" class="widget widget--links" aria-label="Quick Links">
+      <h2 class="widget__title">Quick Links</h2>
+      <div class="links__input-row">
+        <input
+          type="text"
+          id="quicklinks-label-input"
+          class="links__input"
+          placeholder="Label"
+          aria-label="Label link"
+        />
+        <input
+          type="url"
+          id="quicklinks-url-input"
+          class="links__input"
+          placeholder="https://..."
+          aria-label="URL link"
+        />
+        <button id="quicklinks-add" class="btn btn--primary">Tambah</button>
+      </div>
+      <div id="quicklinks-error" class="error-msg hidden"></div>
+      <div id="quicklinks-list" class="links__list" aria-label="Daftar quick links"></div>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
